@@ -1,0 +1,10 @@
+version: '1.0'
+
+services:
+
+  tk5:
+    container_name: tk5
+    image: ubuntu-tk5
+    ports:
+      - "3270:3270"
+      - "8038:8038"

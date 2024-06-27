@@ -1,0 +1,10 @@
+FROM ubuntu:24.04
+
+RUN apt update && apt upgrade -y
+RUN apt-get install -y wget zip file
+RUN cd /tmp && wget https://www.prince-webdesign.nl/images/downloads/mvs-tk5.zip
+RUN unzip /tmp/mvs-tk5.zip
+RUN cd mvs-tk5 && chmod +x mvs hercules/linux/64/bin/hercules
+
+WORKDIR /mvs-tk5
+ENTRYPOINT ./mvs
